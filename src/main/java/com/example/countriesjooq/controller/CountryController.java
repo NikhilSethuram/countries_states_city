@@ -1,7 +1,7 @@
 package com.example.countriesjooq.controller;
 
+import com.example.countriesjooq.model.CountriesModel;
 import com.example.countriesjooq.service.CountriesService;
-import com.tej.JooQDemo.jooq.sample.model.tables.pojos.Countries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +18,12 @@ public class CountryController {
     private CountriesService countryservice;
 
     @GetMapping
-    public List<Countries> getCoutries(){
+    public List<CountriesModel> getCoutries(){
         return countryservice.getAllCountries();
     }
 
     @RequestMapping("/getID")
-    public Countries getCountriesByID(@RequestParam String ID){
+    public CountriesModel getCountriesByID(@RequestParam String ID){
         return countryservice.getCountriesByID(ID);
     }
 
